@@ -36,7 +36,7 @@ int main(int argc, char *argv[])
 	if (fd < 0)
 	err(-1, "failed to find %s in %s", argv[1], fullPath);
 	printf("Executing FD: %d\n", fd);
-	//cap_enter();//*Enabling Capsicum capability mode*// 
+	cap_enter();//*Enabling Capsicum capability mode*// 
         fexecve(fd, argv + 1, environ);
 	err(-1, "fexecve() failed");
 
